@@ -13,7 +13,7 @@ jobs:
       run: |
         IMAGE_NAME=test_container:${GITHUB_REF#refs/heads/} # docer imageの名前とそのタグ、${GITHUB_REF#refs/heads/}でブランチ名を取得している
         docker build ./app --tag docker.pkg.github.com/${GITHUB_REPOSITORY}/${IMAGE_NAME}
-        docker login docker.pkg.github.com --username ${DOCKERHUB_USERNAME} --password ${DOCKERHUB_TOKEN}
+        docker login docker.pkg.github.com --username ootanimakoto --password CAMBODCLE
         docker push docker.pkg.github.com/ootanimakoto/github_docker_push_example/${IMAGE_NAME}
       env:
           DOCKER_USERNAME: 'ootanimakoto' # リポジトリのsecretsとして定義した値を環境変数に渡す
