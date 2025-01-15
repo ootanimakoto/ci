@@ -13,8 +13,8 @@ jobs:
       run: |
         IMAGE_NAME=test_container:${GITHUB_REF#refs/heads/} # docer imageの名前とそのタグ、${GITHUB_REF#refs/heads/}でブランチ名を取得している
         docker build ./app --tag ghcr.io/${GITHUB_REPOSITORY}/${IMAGE_NAME}
-   - uses: docker/login-action@v2
    - name: Login to GitHub Container Registry
+   - uses: docker/login-action@v1
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
