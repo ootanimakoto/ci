@@ -13,4 +13,5 @@ jobs:
       run: |
         IMAGE_NAME=test_container:${GITHUB_REF#refs/heads/} # docer imageの名前とそのタグ、${GITHUB_REF#refs/heads/}でブランチ名を取得している
         docker build ./app --tag ghcr.io/${GITHUB_REPOSITORY}/${IMAGE_NAME}
-        docker login --username ootanimakoto --password 
+        docker login --username ootanimakoto --password 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
+        
