@@ -14,6 +14,6 @@ jobs:
         IMAGE_NAME=test_container:${GITHUB_REF#refs/heads/} # docer imageの名前とそのタグ、${GITHUB_REF#refs/heads/}でブランチ名を取得している
         docker build ./app --tag ${GITHUB_REPOSITORY}/${IMAGE_NAME}
         docker login -u ootanimakoto --password CAMBODCLE
-        docker push ootanimakoto/test:0.0.1
+        docker push repository/docker/ootanimakoto/testootanimakoto/test:0.0.1
                 
         
