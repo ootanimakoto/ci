@@ -1,4 +1,5 @@
-name: CI
+- name: Docker Login
+  uses: docker/login-action@v3.3.0name: CI
 
 on: [push]
 
