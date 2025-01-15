@@ -12,7 +12,8 @@ jobs:
     - name: build Dockerfile and push image # userで外部ファイル or 定義済みの処理を実行できる。ここではリポジトリのcheckout
       run: |
         IMAGE_NAME=test_container:${GITHUB_REF#refs/heads/} # docer imageの名前とそのタグ、${GITHUB_REF#refs/heads/}でブランチ名を取得している
-        docker build ./app --tag ${GITHUB_REPOSITORY}/${IMAGE_NAME}
+        docker build ./app --tag ${IMAGE_NAME}
         docker login -u ootanimakoto --password CAMBODCLE
-        docker push repository/docker/ootanimakoto/test:0.0.1
+        docker push docker.hub.com/test_container:latest
+        
         
